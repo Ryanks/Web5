@@ -12,7 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <%
+            //boopdaboopda
         response.sendRedirect("studentMainPage.jsp");
         
         %>
