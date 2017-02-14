@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-        response.sendRedirect("studentMainPage.jsp");
+        response.sendRedirect("student/studentMainPage.jsp");
         
         %>
     </body>
