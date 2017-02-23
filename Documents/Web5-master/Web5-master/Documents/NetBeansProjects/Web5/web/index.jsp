@@ -4,7 +4,7 @@
     Author     : Sean O'Neil
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import = "myBeans.DBConnect"%>
 <!DOCTYPE html>
 <html>
     <head>
