@@ -15,7 +15,14 @@
         <script src ="showStudentOptions.js"></script>
     </head>
     <body>
-        <h1>Welcome Student</h1>
+        <%
+            if(session.getAttribute("user")=="")
+                response.sendRedirect("index.jsp");
+            
+        
+        %>
+        
+        <h1>Welcome <%out.println(session.getAttribute("name"));%></h1>
         <nav class="w3-sidenav w3-collapse w3-white w3-card-2 w3-animate-left" style="width:200px;" id="mySidenav">
             <a href="javascript:void(0)" onclick="w3_close()" 
                class="w3-closenav w3-large w3-hide-large">Close &times;</a>
