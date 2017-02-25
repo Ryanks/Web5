@@ -17,7 +17,7 @@
             out.print("<h1>Howdee</h1>");
             String user = request.getParameter("username");
             String pwd = request.getParameter("password");
-            String sql = "select username, typeOfMember from account where username = ?" + " and Password = ?";
+            String sql = "select username,name, typeOfMember from account where username = ?" + " and Password = ?";
             //' or ''=''
             
             DBConnect dbConnect = new DBConnect();
@@ -30,7 +30,9 @@
                 String values[] = result.split(", ");
                 String username = values[0];
                 session.setAttribute("user", username);
-                int status = Integer.parseInt(values[1]);
+                String name1 = values[1];
+                session.setAttribute("name",name1);
+                int status = Integer.parseInt(values[2]);
                 session.setAttribute("status", status);
                 switch (status) {
                     case 1:
