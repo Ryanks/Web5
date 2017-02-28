@@ -9,7 +9,7 @@ package myBeans;
 import java.sql.*;
 
 public class DBConnect {
-
+//comment
   // Declare connection string variables
   String username = "root";
   String password = "";
