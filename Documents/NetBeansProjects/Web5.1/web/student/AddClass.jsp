@@ -4,7 +4,7 @@
     Author     : Sean O'Neil
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import = "myBeans.DBConnect"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +15,9 @@
         
         <%
             //boopdaboopda
-        response.sendRedirect("studentMainPage.jsp");
-        
+        String crn = request.getParameter("AddClass");
+        DBConnect db = new DBConnect();
+        String sql = "insert into course_account '0','0','0.0','" + "'";
         %>
     </body>
 </html>

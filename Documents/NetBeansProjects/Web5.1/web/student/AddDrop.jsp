@@ -53,7 +53,7 @@
             <h3>To add a new course, type in the CRN number</h3>
             <input type="text" name="crn" ><br>
             <form>
-            <button name ="add" type ="submit" value = "Add Class">Add Class</button>
+            <button name ="add" type ="submit" name = "AddClass">Add Class</button>
         </form>
         </form>
     </body>
