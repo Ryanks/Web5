@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2017 at 08:37 PM
+-- Generation Time: Feb 28, 2017 at 03:54 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -46,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `Name` int(60) NOT NULL,
   `Time` int(60) NOT NULL,
   `Instructor` int(11) NOT NULL,
-  `CourseID` int(11) NOT NULL,
   `CRN` int(11) NOT NULL,
   `room_location` int(11) NOT NULL,
   `Prerequisites` int(11) NOT NULL,
@@ -54,7 +53,8 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `Current_number_of_students` int(11) NOT NULL,
   `LAB` int(11) NOT NULL,
   `LAS` int(11) NOT NULL,
-  `Term` varchar(60) NOT NULL
+  `Term` varchar(60) NOT NULL,
+  `CourseNumber` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
