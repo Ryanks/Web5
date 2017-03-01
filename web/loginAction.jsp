@@ -17,7 +17,7 @@
             out.print("<h1>Howdee</h1>");
             String user = request.getParameter("username");
             String pwd = request.getParameter("password");
-            String sql = "select username,name, typeOfMember from account where username = ?" + " and Password = ?";
+            String sql = "select username,name, attribute from account where username = ?" + " and Password = ?";
             //' or ''=''
             
             DBConnect dbConnect = new DBConnect();
@@ -26,7 +26,6 @@
             if (result.length() == 0) {
                 response.sendRedirect("index.jsp");
             } else {
-
                 String values[] = result.split(", ");
                 String username = values[0];
                 session.setAttribute("user", username);
@@ -35,12 +34,12 @@
                 int status = Integer.parseInt(values[2]);
                 session.setAttribute("status", status);
                 switch (status) {
-                    case 1:
+                    case 2:
                         session.setAttribute("page", "admin");
                         response.sendRedirect("admin/admin.jsp");
                         break;
 
-                    case 2:
+                    case 1:
                         session.setAttribute("page", "staff");
                         response.sendRedirect("faculty/faculty.jsp");
                         break;

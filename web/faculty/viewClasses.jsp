@@ -8,10 +8,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%@include file = "faculty.jsp" %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%@include file = "faculty.jsp" %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
   </head>
   <body>
     <div class="w3-center" class="w3-dropdown-content w3-border">
@@ -20,7 +24,7 @@
       <a href="faculty.jsp">Winter 2016</a>
       <a href="faculty.jsp">Fall 2016</a>
     </div>
-  </div> 
 
-</body>
+
+  </body>
 </html> 

@@ -17,12 +17,14 @@
         <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
     </head>
     <body>
-      <%@include file = "header.jsp" %>
-        <div style="margin-left:200px; margin-top: 1cm;">
-
-            <a href ="loginPage.jsp"><button>Enter Secure Area</button></a>
-            <a href ="#"><button>Class Schedule</button></a>
-            <a href ="#"><button>Course Catalog</button></a>
+        <nav class="w3-sidenav w3-collapse w3-white w3-card-2 w3-animate-left" style="width:190px; border-style: hidden;" id="mySidenav">
+            <img src="pics\W.jpg" style = "height: 550px;width: 200px">
+            
+            
+        </nav>
+        
+        <div style="margin-left:200px;">
+            <img src="pics\fsu_banner.jpg">
         </div>
     </body>
 </html>
