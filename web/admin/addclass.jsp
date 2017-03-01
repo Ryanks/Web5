@@ -16,21 +16,32 @@
             </div>
     </head>
     <body>
-        <br><br><br>
-     <div style="margin-left:25%">
-        <form>
-            Course Code<br> <input type="text"  size="15" /><br><br><br>
-            CRN<br> <input type="text"  size="15" /><br><br><br>
-            Professor<br> <input type="text"  size="15" /><br><br><br>
-
-            Semester:
-            <select name="semester">
-                <option value="Fall 2016">Fall 2016</option>
-                <option value="Spring 2017">Spring 2017</option>
-            </select>
-            <br><br><br>
-            <input type="button"  value="Add Course" />
-        </form>
-     </div>
+    <center>
+        <table border="1">
+            <form name="getForm" action="updateClass.jsp" method="get">
+                <tr>
+                    <td>Course Code</td>
+                    <td><input type="text" name="inputCode"></td>
+                </tr>
+                <tr>
+                    <td>CRN</td>
+                    <td><input type="text" name="inputCRN"></td>
+                </tr>
+                <tr>
+                    <tr>
+                    <td>Professor</td>
+                    <td><input type="text" name="inputProf"></td>
+                </tr>
+                <tr>
+                    <td>Semester</td>
+                    <td><input type="text" name="inputSemester"></td>
+                </tr>
+                    <td colspan="2">
+                        <input type="submit" value="Add Course">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </center>
     </body>
 </html>

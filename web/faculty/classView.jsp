@@ -18,15 +18,14 @@
     <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
   </head>
   <body>
-    <%@include file = "faculty.jsp" %>
-    <%
-      int CRN = Integer.parseInt(request.getParameter("CRN"));
-      String sql = "select Schoolid, Grade from course_account where CRN = '" + CRN + "' and instructor = '" + teacher + "'";
+    //<%
+      //int CRN = Integer.parseInt(request.getParameter("CRN"));
+     // String sql = "select Schoolid, Grade from course_account where CRN = '" + CRN + "' and instructor = '" + teacher + "'";
       //DB CONNECT SHIT AND RESULT PARSING
     %>
-    <table class="w3-table">
+   <%-- <table class="w3-table">
       <tr>
-        <th>School ID</th>
+      <%--  <th>School ID</th>
         <th>Name</th>
         <th>Grade</th>
         <th>Email</th>
@@ -53,6 +52,6 @@
 
       %>
 
-
+--%>
   </body>
 </html> 
