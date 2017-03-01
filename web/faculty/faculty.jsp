@@ -23,13 +23,13 @@
         <button class="w3-button w3-teal">View Classes</button>
         <div class="w3-dropdown-content w3-border">
           <td><form name="viewclass" action="viewClasses.jsp" method="post">
-              <button type="submit" name="classid" value="<%="Spring2017"%>">Spring 2017</button>
+              <button class="w3-button w3-green" type="submit" name="semester" value="<%="Spring2017"%>">Spring 2017</button>
           </td></form>
           <td><form name="viewclass" action="viewClasses.jsp" method="post">
-              <button type="submit" name="classid" value="<%="Fall2016"%>">Fall 2016</button>
+              <button class="w3-button w3-green" type="submit" name="semester" value="<%="Fall2016"%>">Fall 2016</button>
           </td></form>
           <td><form name="viewclass" action="viewClasses.jsp" method="post">
-              <button type="submit" name="classid" value="<%="Winter2016"%>">Winter 2016</button>
+              <button class="w3-button w3-green" type="submit" name="semester" value="<%="Winter2016"%>">Winter 2016</button>
           </td></form>
         </div>
       </div> 

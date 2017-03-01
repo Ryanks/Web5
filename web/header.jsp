@@ -24,7 +24,7 @@
         </nav>
         
         <div style="margin-left:200px;">
-            <img src="pics\fsu_banner.jpg">
+            <img src="pics\fsu_banner.jpg" style = "height: 100px;width: 800px">
         </div>
     </body>
 </html>
