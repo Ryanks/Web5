@@ -15,7 +15,7 @@
     <title>JSP Page</title>
   </head>
   <body>
-    <%
+    <%//comment
       String user = request.getParameter("username");
       String pwd = request.getParameter("password");
       String sql = "select * from account where username = ?"
