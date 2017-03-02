@@ -5,23 +5,27 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file = "header.jsp" %>
+<%@include file = "header2.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <div class="w3-container w3-teal" align="center">
+        <div style="margin-top: 0.25%" class="w3-container w3-teal" align="center">
             <h1>Add a Course</h1>
             </div>
     </head>
     <body>
     <center>
-        <table border="1">
-            <form name="getForm" action="updateClass.jsp" method="get">
+        <table border="1" cellpadding="30">
+            <form name="getForm" action="updateaddclass.jsp" method="get">
                 <tr>
-                    <td>Course Code</td>
-                    <td><input type="text" name="inputCode"></td>
+                    <td>Course Name</td>
+                    <td><input type="text" name="inputName"></td>
+                </tr>
+                <tr>
+                    <td>Course Number</td>
+                    <td><input type="text" name="inputNumber"></td>
                 </tr>
                 <tr>
                     <td>CRN</td>
@@ -29,12 +33,24 @@
                 </tr>
                 <tr>
                     <tr>
-                    <td>Professor</td>
-                    <td><input type="text" name="inputProf"></td>
+                    <td>Instructor</td>
+                    <td><input type="text" name="inputInstructor"></td>
                 </tr>
                 <tr>
                     <td>Semester</td>
                     <td><input type="text" name="inputSemester"></td>
+                </tr>
+                <tr>
+                    <td>Room</td>
+                    <td><input type="text" name="inputRoom"></td>
+                </tr>
+                <tr>
+                    <td>Student Cap</td>
+                    <td><input type="text" name="inputCap"></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td><input type="time" name="inputTime"></td>
                 </tr>
                     <td colspan="2">
                         <input type="submit" value="Add Course">
