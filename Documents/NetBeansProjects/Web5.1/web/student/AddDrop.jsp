@@ -4,7 +4,7 @@
     Author     : Sean O'Neil
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="myBeans.DBConnect"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,48 +13,58 @@
     </head>
     <body>
         <h1>Here are your current classes this semester</h1>
+
+        <%
+            DBConnect db = new DBConnect();
+            String IDsql = "select ID from account where Username = '" + session.getAttribute("user")+"'";
+            String theid = db.queryDB(IDsql);
+            theid = theid.replace(",", "");
+            session.setAttribute("id",theid);
+            String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"'";
+            String crns = db.queryDB(crnSql);
+            String values[] = crns.split(", ");
+        %>
         <form action = "DropClass.jsp">
-        <table class="w3-table w3-striped">
-            <tr>
-                <td>Course</td>
-                <td>Instructor</td>
-                <th>time</th>
-                <th>Drop Option</th>
-            </tr>
-            <tr>
-                <th>Software Engineering</th>
-                <th>Nadimpali Mahadev</th>
-                <th>T TH   9:30-10:45</th>
-                <th><input type="checkbox"></th>
+            <table class="w3-table w3-striped">
+                <tr>
+                    <td>Course</td>
+                    <td>Instructor</td>
+                    <th>time</th>
+                    <th>Drop Option</th>
+                </tr>
+                <%
+                for(int i=0;i<values.length;i++){
+                String tempcrn = "select * from courses where CRN = '" + values[i]+"'";
+                String tempclass = db.queryDB(tempcrn);
+                String tempResults[] = tempclass.split(",");
+                String className = tempResults[1];
+                String instruct = tempResults[3];
+                String time = tempResults[2];
+            
+            
+                %>
+                <tr>
+                    <th><%=className%></th>
+                    <th><%=instruct%></th>
+                    <th><%=time%></th>
+                    <th><input type="checkbox"></th>
 
-            </tr>
-            <tr>
-                <th>Data Science</th>
-                <th>Orlando Montalvo</th>
-                <th>T TH   3:30-445</th>
-                <th><input type="checkbox"></th>
+                </tr>
+                <%}%>
+                
+            </table>
+            <br>
 
-            </tr>
-            <tr>
-                <th>Intro to Speech</th>
-                <th>Angela Nastasse-Carder</th>
-                <th>T TH   8:00-9:15</th>
-                <th><input type="checkbox"></th>
-
-            </tr>
-        </table>
-        <br>
-        
             <button name ="drop" type ="submit" value = "Drop Class">Drop Class</button>
         </form>
 
-        
+                
         <form action = "AddClass.jsp">
             <h3>To add a new course, type in the CRN number</h3>
             <input type="text" name="crn" ><br>
             <form>
-            <button name ="add" type ="submit" name = "AddClass">Add Class</button>
-        </form>
+                <button name ="AddClass" type ="submit">Add Class</button>
+            </form>
         </form>
     </body>
 </html>

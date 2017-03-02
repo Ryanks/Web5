@@ -13,7 +13,7 @@ public class DBConnect {
   // Declare connection string variables
   String username = "root";
   String password = "";
-  String url = "jdbc:mysql://localhost/Web5";
+  String url = "jdbc:mysql://localhost/Web5.2";
   String driver = "com.mysql.jdbc.Driver";
   Connection conn;
   Statement stm;

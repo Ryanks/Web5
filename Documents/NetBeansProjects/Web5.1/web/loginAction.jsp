@@ -17,7 +17,7 @@
             out.print("<h1>Howdee</h1>");
             String user = request.getParameter("username");
             String pwd = request.getParameter("password");
-            String sql = "select username,name, typeOfMember from account where username = ?" + " and Password = ?";
+            String sql = "select Username,Name, Attribute from account where Username = ?" + " and Password = ?";
             //' or ''=''
             
             DBConnect dbConnect = new DBConnect();

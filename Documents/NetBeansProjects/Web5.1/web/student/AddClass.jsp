@@ -15,9 +15,13 @@
         
         <%
             //boopdaboopda
-        String crn = request.getParameter("AddClass");
+        String crn =request.getParameter("crn");
         DBConnect db = new DBConnect();
-        String sql = "insert into course_account '0','0','0.0','" + "'";
+        
+        out.println(session.getAttribute("id"));
+        String sql = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + crn + "','" + 0 + "','" +0 + "')";
+        db.updateDB(sql);
+        response.sendRedirect("studentMainPage.jsp");
         %>
     </body>
 </html>
