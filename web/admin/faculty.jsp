@@ -5,11 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file = "header.jsp" %>
+<%@include file = "header2.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <div class ="w3-container w3-teal" align="center">
+        <div style="margin-top: 0.25%"  class ="w3-container w3-teal" align="center">
         <h1>Add or remove faculty</h1>
         </div>   
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

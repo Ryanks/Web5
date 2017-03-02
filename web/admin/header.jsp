@@ -14,7 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div style=""margin-left:25%">
+        
           
         <nav class="w3-sidenav w3-red" style="width:6%">
             <br><br><br><br>
@@ -22,11 +22,8 @@
   <a href="admin.jsp">Admin Home</a>
   <a href="classes.jsp">Add/Drop Course</a> 
   <a href="faculty.jsp">Add/Drop Faculty</a> 
-  <a href="student.jsp">Add/Drop Students</a> 
-  <a href="managestudent.jsp">Add/Drop Students From Courses</a>
+  <a href="student.jsp">Add/Drop Students</a>
 </nav>
-        
-        
-        </>
+  
     </body>
 </html>

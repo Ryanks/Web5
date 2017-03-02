@@ -5,20 +5,20 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file = "header.jsp" %>
+<%@include file = "header2.jsp" %>
 <!DOCTYPE html>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="/lib/w3.css">
         <title>JSP Page</title>
+    <div style="margin-top: 0.25%"  class ="w3-container w3-teal" align="center">
+        <h1>Welcome to Web5!</h1>
+        </div>
          
     
     </head>
     <body>
-        <div class ="w3-container w3-teal" align="center">
-        <h1>Welcome to Web5!</h1>
-        </div>     
+             
         
 <div style="margin-left:25%">
     Admin functions include: <br>
