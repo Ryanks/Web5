@@ -33,9 +33,9 @@
     } else {
       result.beforeFirst();
     %>
-    <table class="w3-table">
+   <table class="w3-table">
       <tr>
-        <th>School ID</th>
+       <th>School ID</th>
         <th>Name</th>
         <th>Grade</th>
         <th>Email</th>
@@ -76,6 +76,6 @@
         }
       %>
 
-
+--%>
   </body>
 </html> 
