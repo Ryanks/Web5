@@ -64,6 +64,7 @@
         <td><%=name%></td>
         <td><%=time%></td>
         <td><%=terms%></td>
+        <td><%=CRN%></td>
         <td><form name="classview" action="classView.jsp" method="post">
             <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
           </form></td>
