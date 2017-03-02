@@ -14,7 +14,7 @@
     <body>
         
         <%
-            //boopdaboopdaasdasda
+            //boopdaboopdasfasfdas
         response.sendRedirect("studentMainPage.jsp");
         
         %>
