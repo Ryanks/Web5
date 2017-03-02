@@ -5,32 +5,59 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file = "header.jsp" %>
+<%@include file = "header2.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <div class="w3-container w3-teal" align="center">
+        <div style="margin-top: 0.25%" class="w3-container w3-teal" align="center">
             <h1>Add a Course</h1>
             </div>
     </head>
     <body>
-        <br><br><br>
-     <div style="margin-left:25%">
-        <form>
-            Course Code<br> <input type="text"  size="15" /><br><br><br>
-            CRN<br> <input type="text"  size="15" /><br><br><br>
-            Professor<br> <input type="text"  size="15" /><br><br><br>
-
-            Semester:
-            <select name="semester">
-                <option value="Fall 2016">Fall 2016</option>
-                <option value="Spring 2017">Spring 2017</option>
-            </select>
-            <br><br><br>
-            <input type="button"  value="Add Course" />
-        </form>
-     </div>
+    <center>
+        <table border="1" cellpadding="30">
+            <form name="getForm" action="updateaddclass.jsp" method="get">
+                <tr>
+                    <td>Course Name</td>
+                    <td><input type="text" name="inputName"></td>
+                </tr>
+                <tr>
+                    <td>Course Number</td>
+                    <td><input type="text" name="inputNumber"></td>
+                </tr>
+                <tr>
+                    <td>CRN</td>
+                    <td><input type="text" name="inputCRN"></td>
+                </tr>
+                <tr>
+                    <tr>
+                    <td>Instructor</td>
+                    <td><input type="text" name="inputInstructor"></td>
+                </tr>
+                <tr>
+                    <td>Semester</td>
+                    <td><input type="text" name="inputSemester"></td>
+                </tr>
+                <tr>
+                    <td>Room</td>
+                    <td><input type="text" name="inputRoom"></td>
+                </tr>
+                <tr>
+                    <td>Student Cap</td>
+                    <td><input type="text" name="inputCap"></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td><input type="time" name="inputTime"></td>
+                </tr>
+                    <td colspan="2">
+                        <input type="submit" value="Add Course">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </center>
     </body>
 </html>

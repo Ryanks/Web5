@@ -4,6 +4,7 @@
     Author     : rchild
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,12 +19,21 @@
     <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
   </head>
   <body>
-    <%@include file = "faculty.jsp" %>
     <%
       String term = request.getParameter("semester");
       String teacher = session.getAttribute("name").toString();
       String sql = "select name, time, CRN, term, coursenumber from courses where term = '" + term + "' and instructor = '" + teacher + "'";
       //DB CONNECT SHIT AND RESULT PARSING
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
+      PreparedStatement state = con.prepareStatement(sql);
+      ResultSet result = state.executeQuery();
+      if (result.next() == false) {
+    %>
+    <h1><div class="w3-center">Oops! no result set.</div></h1>
+    <%
+    } else {
+      result.beforeFirst();
     %>
     <table class="w3-table">
       <tr>
@@ -42,6 +52,11 @@
         int courseNumber;
         int CRN;
         while (result.next()) {
+          name = result.getString(1);
+          time = result.getString(2);
+          CRN = result.getInt(3);
+          terms = result.getString(4);
+          courseNumber = result.getInt(5);
           //set each term = result part
       %>
       <tr>
@@ -49,12 +64,14 @@
         <td><%=name%></td>
         <td><%=time%></td>
         <td><%=terms%></td>
+        <td><%=CRN%></td>
         <td><form name="classview" action="classView.jsp" method="post">
-              <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
+            <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
           </form></td>
       </tr>
 
       <%        }
+        }
       %>
 
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2017 at 10:49 PM
+-- Generation Time: Mar 02, 2017 at 03:49 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `Name` varchar(60) NOT NULL,
   `Email` varchar(60) NOT NULL,
   `Password` varchar(60) NOT NULL,
-  `Attribute` int(60) NOT NULL,
+  `Status` int(60) NOT NULL,
   `Username` varchar(60) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`ID`, `Name`, `Email`, `Password`, `Attribute`, `Username`) VALUES
+INSERT INTO `account` (`ID`, `Name`, `Email`, `Password`, `Status`, `Username`) VALUES
 (1, 'Faculty', 'Faculty', 'Faculty', 1, 'Faculty'),
 (2, 'Student', 'Student', 'Student', 0, 'Student'),
 (3, 'Admin', 'Admin', 'Admin', 2, 'Admin');
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `LAB` varchar(11) NOT NULL,
   `LAS` varchar(11) NOT NULL,
   `Term` varchar(60) NOT NULL,
-  `CourseNumber` int(11) NOT NULL
+  `CourseNumber` varchar(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
 --
 
 INSERT INTO `courses` (`ID`, `Name`, `Time`, `Instructor`, `CRN`, `room_location`, `Prerequisites`, `Max_number_of_students`, `Current_number_of_students`, `LAB`, `LAS`, `Term`, `CourseNumber`) VALUES
-(2, 'Test Course', '8:00', 'Faculty', 12345, 'Edgerly 201', '', 22, 0, '', '', 'Spring2017', 1100);
+(2, 'Test Course', '8:00', 'Faculty', 12345, 'Edgerly 201', '', 22, 0, '', '', 'Spring2017', '1100');
 
 -- --------------------------------------------------------
 
