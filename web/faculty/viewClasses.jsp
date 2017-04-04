@@ -35,45 +35,47 @@
     } else {
       result.beforeFirst();
     %>
-    <table class="w3-table">
-      <tr>
-        <th>Course Number</th>
-        <th>Class</th>
-        <th>Time</th>
-        <th>Term</th>
-        <th>CRN</th>
-        <th>View</th>
-      </tr>
-      <%
-        int id;
-        String name;
-        String time;
-        String terms;
-        int courseNumber;
-        int CRN;
-        while (result.next()) {
-          name = result.getString(1);
-          time = result.getString(2);
-          CRN = result.getInt(3);
-          terms = result.getString(4);
-          courseNumber = result.getInt(5);
-          //set each term = result part
-      %>
-      <tr>
-        <td><%=courseNumber%></td>
-        <td><%=name%></td>
-        <td><%=time%></td>
-        <td><%=terms%></td>
-        <td><%=CRN%></td>
-        <td><form name="classview" action="classView.jsp" method="post">
-            <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
-          </form></td>
-      </tr>
+    <div style="margin-left:200px;">
+      <table class="w3-table">
+        <tr>
+          <th>Course Number</th>
+          <th>Class</th>
+          <th>Time</th>
+          <th>Term</th>
+          <th>CRN</th>
+          <th>View</th>
+        </tr>
+        <%
+          int id;
+          String name;
+          String time;
+          String terms;
+          int courseNumber;
+          int CRN;
+          while (result.next()) {
+            name = result.getString(1);
+            time = result.getString(2);
+            CRN = result.getInt(3);
+            terms = result.getString(4);
+            courseNumber = result.getInt(5);
+            //set each term = result part
+        %>
+        <tr>
+          <td><%=courseNumber%></td>
+          <td><%=name%></td>
+          <td><%=time%></td>
+          <td><%=terms%></td>
+          <td><%=CRN%></td>
+          <td><form name="classview" action="classView.jsp" method="post">
+              <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
+            </form></td>
+        </tr>
+        <%        }
+          }
+        %>
 
-      <%        }
-        }
-      %>
-
+      </table>
+    </div>
 
   </body>
 </html> 
