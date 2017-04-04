@@ -23,7 +23,7 @@
       String term = request.getParameter("semester");
       String teacher = session.getAttribute("name").toString();
       String sql = "select name, time, CRN, term, coursenumber from courses where term = '" + term + "' and instructor = '" + teacher + "'";
-      //DB CONNECT SHIT AND RESULT PARSING
+   
       Class.forName("com.mysql.jdbc.Driver");
       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
       PreparedStatement state = con.prepareStatement(sql);
