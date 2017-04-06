@@ -34,7 +34,7 @@
 
                     <%String sqlClass = "select Name from courses where CRN = '" + grade[a] + "'";
                         String cclass = db.queryDB(sqlClass);
-                        cclass.replace(","," ");
+                        cclass = cclass.replace(","," ");
                     %>
                     <%= cclass%>
 
@@ -43,6 +43,7 @@
                 <th>
                     <%String sqlGrade = "select Grade from course_account where CRN = '" + grade[a] + "'";
                         String cGrade = db.queryDB(sqlGrade);
+                        cGrade = cGrade.replace(","," ");
                         a++;
                     %>
                     <%= cGrade%>

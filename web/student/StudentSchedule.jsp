@@ -35,7 +35,7 @@
                     count = 1;
                     continue;
                 }
-            out.println(crns1[i]);
+            
             crns1[i] = crns1[i].replace("'"," ");
              course_Details = "Select Name, Instructor, Time, room_location from courses where CRN = " +crns1[i] ;
              String getCD = ab2.queryDB(course_Details);
