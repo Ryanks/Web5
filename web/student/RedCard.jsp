@@ -33,12 +33,14 @@
                     String[] splitRC = getRC.split(",");
                     
                     for (int i = 0; i < splitRC.length-1; i++) {
+                        splitRC[i] = splitRC[i].replace(","," ");
                         if (splitRC[i + 1].equals("0")) {
                            i++;
                             continue;
                         } else {
                             String getClassSql = "select Name from courses where CRN = " + splitRC[i];
                             String getClass = db68.queryDB(getClassSql);
+                            getClass = getClass.replace(","," ");
                 %>
 
                 <th><%= getClass%></th>
@@ -56,7 +58,7 @@
                 <%} else {%>
                 <td>Denied</td>
                 <%}i++;}}%>
-
+                
 
 
             </tr>
