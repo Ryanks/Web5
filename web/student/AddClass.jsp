@@ -21,11 +21,11 @@
             
             
         String crn =request.getParameter("crn");
-        DBConnect db = new DBConnect();
+        DBConnect db3 = new DBConnect();
         
         out.println(session.getAttribute("id"));
         String sql = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + crn + "','" + 0 + "','" +0 + "')";
-        db.updateDB(sql);
+        db3.updateDB(sql);
         response.sendRedirect("studentMainPage.jsp");
         %>
     </body>

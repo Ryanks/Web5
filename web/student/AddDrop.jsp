@@ -15,13 +15,10 @@
         <h1>Here are your current classes this semester</h1>
 
         <%
-            DBConnect db = new DBConnect();
-            String IDsql = "select ID from account where Username = '" + session.getAttribute("user")+"'";
-            String theid = db.queryDB(IDsql);
-            theid = theid.replace(",", "");
-            session.setAttribute("id",theid);
+            DBConnect db4 = new DBConnect();
+            
             String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"'";
-            String crns = db.queryDB(crnSql);
+            String crns = db4.queryDB(crnSql);
             String values[] = crns.split(", ");
         %>
         <form action = "DropClass.jsp">
@@ -33,9 +30,9 @@
                     <th>Drop Option</th>
                 </tr>
                 <%
-                for(int i=0;i<values.length;i++){
-                String tempcrn = "select * from courses where CRN = '" + values[i]+"'";
-                String tempclass = db.queryDB(tempcrn);
+                for(int k=0;k<values.length;k++){
+                String tempcrn = "select * from courses where CRN = '" + values[k]+"'";
+                String tempclass = db4.queryDB(tempcrn);
                 String tempResults[] = tempclass.split(",");
                 String className = tempResults[1];
                 String instruct = tempResults[3];

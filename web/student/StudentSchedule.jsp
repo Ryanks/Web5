@@ -25,5 +25,8 @@
                 <th>waiting</th>
             </tr>
         </table>
+        
+        String abSql = "Select CRN from courses_account where SchoolID = '" + session.getAttribute("id")+"'";
+                String lOCrn = ab1.queryDB(abSql);
     </body>
 </html>
