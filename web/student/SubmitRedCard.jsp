@@ -17,6 +17,7 @@
         String rc =request.getParameter("RedCard");
         String setRC = "UPDATE course_account SET red_card_initializer = 1 where CRN = " + rc;
         db1.updateDB(setRC);
+        response.sendRedirect("studentMainPage.jsp");
         %>
     </body>
 </html>

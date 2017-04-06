@@ -24,7 +24,7 @@
         
         <%
             DBConnect ab2 = new DBConnect();
-            String abSql1 = "Select CRN from courses_account where SchoolID = '" + session.getAttribute("id") + "'";
+            String abSql1 = "Select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "'";
             String lOCrn = ab2.queryDB(abSql1);
             String [] crns1 = lOCrn.split(",");
             String course_Details;
@@ -35,8 +35,9 @@
                     count = 1;
                     continue;
                 }
-            
-             course_Details = "Select Name, Instructor, Time, room_location where CRN = '" +crns1[i] + "'";
+            out.println(crns1[i]);
+            crns1[i] = crns1[i].replace("'"," ");
+             course_Details = "Select Name, Instructor, Time, room_location from courses where CRN = " +crns1[i] ;
              String getCD = ab2.queryDB(course_Details);
              String [] getCD1 = getCD.split(",");
              out.println("<tr>");
