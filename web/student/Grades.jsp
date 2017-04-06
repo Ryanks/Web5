@@ -24,7 +24,7 @@
                     DBConnect db = new DBConnect();
                     String gradeSql = "select CRN, Grade from course_account where SchoolID = '" + session.getAttribute("id") + "'";
                     String grades = db.queryDB(gradeSql);
-                    String[] grade = grades.split(",");
+                    String[] grade = grades.split(" ");
 
                 %>
 
@@ -34,6 +34,7 @@
 
                     <%String sqlClass = "select Name from courses where CRN = '" + grade[a] + "'";
                         String cclass = db.queryDB(sqlClass);
+                        cclass.replace(","," ");
                     %>
                     <%= cclass%>
 

@@ -28,16 +28,16 @@
             <tr>
                 <%
                     DBConnect db1 = new DBConnect();
-                    String getRCSql = "select CRN, red_card_initializer from course_account where ID = " + session.getAttribute("id");
+                    String getRCSql = "select CRN, red_card_initializer from course_account where SchoolID = " + session.getAttribute("id");
                     String getRC = db1.queryDB(getRCSql);
                     String[] splitRC = getRC.split(",");
-
-                    for (int i = 0; i < splitRC.length; i++) {
+                    int test = splitRC.length;
+                    for (int i = 0; i < splitRC.length-1; i++) {
                         if (splitRC[i + 1].equals("0")) {
-                           
+                           i++;
                             continue;
-                        } else {
-                            String getClassSql = "select Name from courses where ID = " + splitRC[i];
+                        } else {i++;
+                            String getClassSql = "select Name from courses where SchoolID = " + splitRC[i];
                             String getClass = db1.queryDB(getClassSql);
                 %>
 
@@ -55,7 +55,7 @@
                 <td>Accepted</td>
                 <%} else {%>
                 <td>Denied</td>
-                <%}}%>
+                <%}}}%>
 
 
 

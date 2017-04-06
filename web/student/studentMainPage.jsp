@@ -56,7 +56,7 @@
         <div class="w3-main" style="margin-left:200px" id ="redcard">
             <header class="w3-container">
                 <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%--<%@include file ="RedCard.jsp" %>--%>
+                <%@include file ="RedCard.jsp" %>
             </header>
         </div>
             
