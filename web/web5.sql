@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2017 at 03:49 PM
+-- Generation Time: Apr 06, 2017 at 03:53 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -83,16 +83,16 @@ CREATE TABLE IF NOT EXISTS `course_account` (
 `ID` int(60) NOT NULL,
   `SchoolID` int(60) NOT NULL,
   `CRN` int(60) NOT NULL,
-  `red_card_initializer` varchar(60) NOT NULL,
-  `Grade` int(60) NOT NULL
+  `Grade` float NOT NULL,
+  `red_card_initializer` varchar(60) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course_account`
 --
 
-INSERT INTO `course_account` (`ID`, `SchoolID`, `CRN`, `red_card_initializer`, `Grade`) VALUES
-(1, 2, 12345, '0', 3);
+INSERT INTO `course_account` (`ID`, `SchoolID`, `CRN`, `Grade`, `red_card_initializer`) VALUES
+(1, 2, 12345, 3.5, '1');
 
 --
 -- Indexes for dumped tables
