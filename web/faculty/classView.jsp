@@ -50,7 +50,7 @@
           while (result.next()) {
             //set each term = result part
             id = result.getInt(1);
-            grade = result.getInt(2);
+            grade = result.getFloat(2);
             //another pull for name and email
             sql = "select name, email from account where id = '" + id + "'";
             state = con.prepareStatement(sql);
