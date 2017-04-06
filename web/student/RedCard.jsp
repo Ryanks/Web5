@@ -22,7 +22,7 @@
         <table class="w3-table w3-striped">
             <tr>
                 <td>Course</td>
-                <td>Instructor</td>
+                
                 <td>Status of red card</td>
             </tr>
             <tr>
