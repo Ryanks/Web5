@@ -27,22 +27,22 @@
             </tr>
             <tr>
                 <%
-                    DBConnect db1 = new DBConnect();
+                    DBConnect db68 = new DBConnect();
                     String getRCSql = "select CRN, red_card_initializer from course_account where SchoolID = " + session.getAttribute("id");
-                    String getRC = db1.queryDB(getRCSql);
+                    String getRC = db68.queryDB(getRCSql);
                     String[] splitRC = getRC.split(",");
-                    int test = splitRC.length;
+                    
                     for (int i = 0; i < splitRC.length-1; i++) {
                         if (splitRC[i + 1].equals("0")) {
                            i++;
                             continue;
-                        } else {i++;
-                            String getClassSql = "select Name from courses where SchoolID = " + splitRC[i];
-                            String getClass = db1.queryDB(getClassSql);
+                        } else {
+                            String getClassSql = "select Name from courses where CRN = " + splitRC[i];
+                            String getClass = db68.queryDB(getClassSql);
                 %>
 
                 <th><%= getClass%></th>
-                <th><%=splitRC[i + 1]%></th>
+                
                 <th>
                     <%
                         if (splitRC[i + 1].equals("1")) {
@@ -55,7 +55,7 @@
                 <td>Accepted</td>
                 <%} else {%>
                 <td>Denied</td>
-                <%}}}%>
+                <%}i++;}}%>
 
 
 
