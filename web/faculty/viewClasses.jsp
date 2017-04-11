@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@include file = "faculty.jsp" %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,7 +34,6 @@
     } else {
       result.beforeFirst();
     %>
-    <div style="margin-left:200px;">
       <table class="w3-table">
         <tr>
           <th>Course Number</th>
@@ -75,7 +73,5 @@
         %>
 
       </table>
-    </div>
-
   </body>
 </html> 

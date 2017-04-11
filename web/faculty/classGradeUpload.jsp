@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@include file = "faculty.jsp" %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -68,7 +67,7 @@
           email = schoolResult.getString(2);
         %>
         <tr>
-          <form name="uploadStudentGrade" action="uploadStudentGrade.jsp" method="post">
+        <form name="uploadStudentGrade" action="uploadStudentGrade.jsp" method="post">
           <td><%=id%></td>
           <input type="hidden" name="student_id" value="<%=id%>">
           <td><%=name%></td>
@@ -76,7 +75,7 @@
           <td><input class="w3-input w3-border" type="text" name="grade"></td>
           <td><%=email%></td>
           <td><button class="w3-btn w3-Blue w3-round-xlarge" type="submit" name="CRN" value="<%=CRN%>">Submit Grade</button>
-        </td></form>
+          </td></form>
         </tr>
 
         <%        }
@@ -85,6 +84,5 @@
         %>
       </table>
     </div>
-        --%>
-        </body>
-        </html> 
+  </body>
+</html> 

@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@include file = "faculty.jsp" %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,6 +27,7 @@
       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
       PreparedStatement state = con.prepareStatement(sql);
       state.executeUpdate();
+      response.sendRedirect("faculty.jsp");
     %>
   </body>
 </html> 

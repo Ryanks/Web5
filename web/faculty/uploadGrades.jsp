@@ -10,7 +10,6 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
-    <%@include file = "faculty.jsp" %>
   </head>
   <body>
 
@@ -28,7 +27,6 @@
     } else {
       result.beforeFirst();
     %>
-    <div style="margin-left:200px;">
       <table class="w3-table">
         <tr>
           <th>Course Number</th>
@@ -72,7 +70,6 @@
         %>
 
       </table>
-    </div>
 
   </body>
 </html>

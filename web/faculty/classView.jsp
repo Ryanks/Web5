@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@include file = "faculty.jsp" %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,18 +20,22 @@
   <body>
     <%
       int CRN = Integer.parseInt(request.getParameter("CRN"));
-      String sql = "select Schoolid, Grade from course_account where CRN = '" + CRN + "'";
+      String classSql = "select Schoolid, Grade from course_account where CRN = '" + CRN + "'";
       Class.forName("com.mysql.jdbc.Driver");
-      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
-      PreparedStatement state = con.prepareStatement(sql);
-      ResultSet result = state.executeQuery();
-      if (result.next() == false) {
+      Connection classcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
+      PreparedStatement classState = classcon.prepareStatement(classSql);
+      ResultSet classResult = classState.executeQuery();
+      if (classResult.next() == false) {
     %>
     <h1><div class="w3-center">Oops! no result set. 1 </div></h1>
     <%
     } else {
-      result.beforeFirst();
+      classResult.beforeFirst();
     %>
+
+    <form name="return" action="faculty.jsp" method="post">
+      <button class="w3-btn w3-Blue w3-round-xlarge" type="submit">Return</button>
+    </form>
     <div style="margin-left:200px;">
       <table class="w3-table">
         <tr>
@@ -42,19 +45,18 @@
           <th>Email</th>
         </tr>
         <%
-        
           int id;
           String name;
           float grade;
           String email;
-          while (result.next()) {
+          while (classResult.next()) {
             //set each term = result part
-            id = result.getInt(1);
-            grade = result.getFloat(2);
+            id = classResult.getInt(1);
+            grade = classResult.getFloat(2);
             //another pull for name and email
-            sql = "select name, email from account where id = '" + id + "'";
-            state = con.prepareStatement(sql);
-            ResultSet schoolResult = state.executeQuery();
+            classSql = "select name, email from account where id = '" + id + "'";
+            classState = classcon.prepareStatement(classSql);
+            ResultSet schoolResult = classState.executeQuery();
             if (schoolResult.next() == false) {
         %>
         <h1><div class="w3-center">Oops! no result set. <%=id%></div></h1>
@@ -76,8 +78,8 @@
             }
           }
         %>
+
       </table>
     </div>
-        --%>
-        </body>
-        </html> 
+  </body>
+</html> 

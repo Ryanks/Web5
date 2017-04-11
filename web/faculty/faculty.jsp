@@ -1,40 +1,57 @@
 <%-- 
-    Document   : HomePage
-    Created on : Jan 25, 2017, 8:32:22 PM
+    Document   : studentMainPage
+    Created on : Feb 5, 2017, 12:24:06 PM
     Author     : Sean O'Neil
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
-  </head>
-  <body>
-    <%@include file = "../header.jsp" %>
-    <div style="margin-left:200px; margin-top: 1cm;">
-      <div class="w3-dropdown-hover">
-        <button class="w3-button w3-teal">View Classes</button>
-        <div class="w3-dropdown-content w3-border">
-          <td><form name="viewclass" action="viewClasses.jsp" method="post">
-              <button class="w3-button w3-green" type="submit" name="semester" value="<%="Spring2017"%>">Spring 2017</button>
-          </td></form>
-          <td><form name="viewclass" action="viewClasses.jsp" method="post">
-              <button class="w3-button w3-green" type="submit" name="semester" value="<%="Fall2016"%>">Fall 2016</button>
-          </td></form>
-          <td><form name="viewclass" action="viewClasses.jsp" method="post">
-              <button class="w3-button w3-green" type="submit" name="semester" value="<%="Winter2016"%>">Winter 2016</button>
-          </td></form>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src ="showFacultyOptions.js"></script>
+    </head>
+    <body>
+      <h1>Welcome Faculty!</h1>
+        <nav class="w3-sidenav w3-collapse w3-teal w3-card-2 w3-animate-left" style="width:200px;" id="mySidenav">
+            <a href="javascript:void(0)" onclick="w3_close()" 
+               class="w3-closenav w3-large w3-hide-large">Close &times;</a>
+
+
+
+            <div class="w3-dropdown-hover">
+                <a href="#" id = viewClasses>View classes</a>
+                <form action = "viewClasses.jsp">
+                    <div class="w3-dropdown-content w3-white w3-card-4" >
+                        <ul>
+                            <a><button type ="submit" value="Spring2017" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Spring 2017</button></a>
+                            <a><button type ="submit" value="Fall2016" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Fall 2016</button></a>
+                            <a><button type ="submit" value="Winter2016" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Winter 2016</button></a>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <a href="#" id = rcuploadGrades>Upload Grades</a>
+            <a href="#" id = rcviewRedCards>View Red Cards</a>
+        </nav>
+
+
+        <div class="w3-main" style="margin-left:200px" id ="uploadGrades">
+            <header class="w3-container">
+                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
+                <%@include file ="uploadGrades.jsp" %>
+            </header>
         </div>
-      </div> 
-      <a href ="uploadGrades.jsp"><button class="w3-button w3-teal">Upload Grades</button></a>
-      <a href ="viewRedCards.jsp"><button class="w3-button w3-teal">View Red Cards</button></a>
-    </div>
-  </body>
+            
+        <div class="w3-main" style="margin-left:200px" id ="viewRedCards">
+            <header class="w3-container">
+                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
+                <%@include file ="viewRedCards.jsp" %>
+            </header>
+        </div>
+
+    </body>
 </html>
