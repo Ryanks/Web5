@@ -1,41 +1,31 @@
 <%-- 
-    Document   : removefaculty
-    Created on : Feb 7, 2017, 12:21:30 AM
+    Document   : dropclass
+    Created on : Feb 6, 2017, 11:44:10 PM
     Author     : James
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file = "header2.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <div style="margin-top: 0.25%" class="w3-container w3-teal" align="center">
-            <h1>Remove a Faculty Member</h1>
-            </div>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <br><br><br>
-     <div style="margin-left:25%">
-        <form>
-            Name<br> <input type="text"  size="15" /><br><br><br>
-            Email<br> <input type="text"  size="15" /><br><br><br>
-            Faculty ID<br> <input type="text"  size="15" /><br><br><br>
-            Department<br>
-            <select name="dept">
-                <option value="Mathematics">Mathematics</option>
-                <option value="Computer Science">Computer Science</option>
-                <option value="English">English</option>
-                <option value="Exercise Science">Exercise Science</option>
-                <option value="History">History</option>
-                <option value="Arts">Arts</option>
-                <option value="Biology">Biology</option>
-                <option value="Business">Business</option>
-            </select>
-            <br><br><br>
-            <input type="button"  value="Remove Faculty" />
-        </form>
-     </div>
+        <center>
+        <table border="1" cellpadding="30">
+            <form name="getForm" action="updateremovefaculty.jsp" method="get">
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="inputUsername"></td>
+                </tr>
+                    <td colspan="2">
+                        <input type="submit" value="Remove Faculty">
+                    </td>
+                </tr>
+                
+            </form>
+        </table>
+    </center>
     </body>
 </html>
