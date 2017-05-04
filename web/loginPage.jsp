@@ -38,9 +38,7 @@
                             <div class="form-group">
                                 <input type="submit" class="btn btn-info" value="Login">
                             </div>
-                            <div class="form-group text-center">
-                                <a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>
-                            </div>
+                            
                         </form>        
                     </div>  
                 </div>    

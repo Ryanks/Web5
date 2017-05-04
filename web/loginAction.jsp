@@ -52,8 +52,12 @@
             response.sendRedirect("faculty/faculty.jsp");
             break;
 
-          default:
+          case 0:
+            session.setAttribute("page", "student");
             response.sendRedirect("student/studentMainPage.jsp");
+            break;
+          default:
+              response.sendRedirect("index.jsp");
         }
       }
     %>

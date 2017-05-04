@@ -21,8 +21,7 @@
         <div style="margin-left:200px; margin-top: 1cm;">
             
             <a href ="loginPage.jsp"><button>Enter Secure Area</button></a>
-            <a href ="#"><button>Class Schedule</button></a>
-            <a href ="#"><button>Course Catalog</button></a>
+            <a href ="student/CourseCatalog.jsp"><button>Course Catalog</button></a>
         </div>
     </body>
 </html>

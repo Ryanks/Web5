@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     </head>
     <body>
         <h1>Here are the courses for the semester</h1>
@@ -50,7 +51,7 @@
 
             </tr>
 
-            <tr>
+            
                 <%
                     DBConnect ab1 = new DBConnect();
                     String abSql = "Select * from courses where 1";
@@ -58,17 +59,28 @@
                     String[] bsql = asql.split(",");
                     int counter = 1;
                     for (int q = 0; q < bsql.length; q++) {
+                        if(counter==1){
+                    %>
+                    
+                        <tr>
+                        <%}%>
+                        <td><%out.print(bsql[q]);%></td>
+                        <%
+                        counter++;
                         if (counter == 10) {
+                            counter = 1;
+                        %>
+                            </tr>
+                            
+                        <%}}%>
+                    
+                    
                 %>
-                            <br>
-                            <%counter = 1;}
-            else{
-                counter++;
-            }
-            %>
-            <td><%out.println(bsql[q]);}%></td>
+                            
+                            
+           
 
-            </tr>
+            
 
         </table>
     </body>
