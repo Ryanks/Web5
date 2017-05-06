@@ -32,13 +32,11 @@
                     String getRC = db68.queryDB(getRCSql);
                     String[] splitRC = getRC.split(",");
                     
-                    for (int i = 0; i < splitRC.length-1; i++) {
-                        splitRC[i] = splitRC[i].replace(","," ");
-                        if (splitRC[i].equals("0")) {
-                           i++;
-                            continue;
-                        } else {
-                            String getClassSql = "select Name from courses where CRN = " + splitRC[i];
+                    for (int z = 0; z < splitRC.length-1; z++) {
+                        splitRC[z] = splitRC[z].replace(","," ");
+                        
+                        if (((splitRC[z].equals(" 1")) || (splitRC[z].equals(" 2")))) {
+                           String getClassSql = "select Name from courses where CRN = " + splitRC[z-1];
                             String getClass = db68.queryDB(getClassSql);
                             getClass = getClass.replace(","," ");
                 %>
@@ -47,18 +45,22 @@
                 
                 <th>
                     <%
-                        if (splitRC[i].equals("1")) {
+                        if (splitRC[z].equals(" 0")) {
 
                     %>
-                <td>waiting</td>
-                <%} else if (splitRC[i].equals("2")) {
+                <td>accepted</td>
+                <%} else if (splitRC[z].equals(" 2")) {
 
                 %>
-                <td>Accepted</td>
+                <td>denied</td>
                 <%} else {%>
-                <td>Denied</td>
-                <%}i++;}}%>
-                
+                <td>waiting</td>
+                <%}}
+                            
+                         else {
+                            continue;
+                            }}%>
+            <br>
 
 
             </tr>
