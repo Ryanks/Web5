@@ -34,7 +34,7 @@
                     
                     for (int i = 0; i < splitRC.length-1; i++) {
                         splitRC[i] = splitRC[i].replace(","," ");
-                        if (splitRC[i + 1].equals("0")) {
+                        if (splitRC[i].equals("0")) {
                            i++;
                             continue;
                         } else {
@@ -47,11 +47,11 @@
                 
                 <th>
                     <%
-                        if (splitRC[i + 1].equals("1")) {
+                        if (splitRC[i].equals("1")) {
 
                     %>
                 <td>waiting</td>
-                <%} else if (splitRC[i + 1].equals("2")) {
+                <%} else if (splitRC[i].equals("2")) {
 
                 %>
                 <td>Accepted</td>

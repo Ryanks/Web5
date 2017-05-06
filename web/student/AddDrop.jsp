@@ -27,7 +27,7 @@
                     <td>Course</td>
                     <td>Instructor</td>
                     <th>time</th>
-                    <th>Drop Option</th>
+                    
                 </tr>
                 <%
                 for(int k=0;k<values.length;k++){
@@ -44,7 +44,7 @@
                     <th><%=className%></th>
                     <th><%=instruct%></th>
                     <th><%=time%></th>
-                    <th><input type="checkbox"></th>
+                    
 
                 </tr>
                 <%}%>
@@ -52,7 +52,7 @@
             </table>
             <br>
 
-            <button name ="drop" type ="submit" value = "Drop Class">Drop Class</button>
+            
         </form>
 
                 
@@ -62,6 +62,11 @@
             <form>
                 <button name ="AddClass" type ="submit">Add Class</button>
             </form>
-        </form>
+       <form action = "DropClass.jsp">
+            <h3>To Drop a course, type in the CRN number</h3>
+            <input type="text" name="crn1" ><br>
+            <form>
+                <button name ="DropClass" type ="submit">Drop Class</button>
+            </form>
     </body>
 </html>
