@@ -18,6 +18,11 @@
     <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
   </head>
   <body>
+    <h1>Welcome Faculty!</h1>
+    <nav class="w3-sidenav w3-collapse w3-teal w3-card-2 w3-animate-left" style="width:200px;" id="mySidenav">
+      <a href="faculty.jsp">Return</a>
+    </nav>
+    <div style="margin-left:200px;">
     <%
       String term = request.getParameter("semester");
       String teacher = session.getAttribute("name").toString();
@@ -73,5 +78,6 @@
         %>
 
       </table>
+    </div>
   </body>
 </html> 

@@ -18,6 +18,10 @@
     <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
   </head>
   <body>
+    <h1>Welcome Faculty!</h1>
+    <nav class="w3-sidenav w3-collapse w3-teal w3-card-2 w3-animate-left" style="width:200px;" id="mySidenav">
+      <a href="faculty.jsp">Return</a>
+    </nav>
     <%
       int CRN = Integer.parseInt(request.getParameter("CRN"));
       String classSql = "select Schoolid, Grade from course_account where CRN = '" + CRN + "'";
@@ -33,9 +37,7 @@
       classResult.beforeFirst();
     %>
 
-    <form name="return" action="faculty.jsp" method="post">
-      <button class="w3-btn w3-Blue w3-round-xlarge" type="submit">Return</button>
-    </form>
+    
     <div style="margin-left:200px;">
       <table class="w3-table">
         <tr>
