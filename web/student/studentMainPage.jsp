@@ -50,6 +50,7 @@
             <a href="#" id = rcDS>Student Detail Schedule</a>
             <a href="#" id = rcRedCard>Red Card into class</a>
             <a href="#" id = rcGrade>Grades</a>
+            <a href="Web5\Logout.jsp" id = logout>Logout</a>
         </nav>
 
 
@@ -82,6 +83,12 @@
             <header class="w3-container">
                 <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
                 <%@include file ="StudentSchedule.jsp" %>
+            </header>
+        </div>
+            <div class="w3-main" style="margin-left:200px" id ="courseschedule">
+            <header class="w3-container">
+                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
+               
             </header>
         </div>
 
