@@ -17,7 +17,7 @@
         <%
             DBConnect db4 = new DBConnect();
             
-            String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"'";
+            String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"' and red_card_initializer = 0";
             String crns = db4.queryDB(crnSql);
             String values[] = crns.split(", ");
         %>
@@ -31,7 +31,7 @@
                 </tr>
                 <%
                 for(int k=0;k<values.length;k++){
-                String tempcrn = "select * from courses where CRN = '" + values[k]+"'";
+                String tempcrn = "select * from courses where CRN = '" + values[k]+"' ";
                 String tempclass = db4.queryDB(tempcrn);
                 String tempResults[] = tempclass.split(",");
                 String className = tempResults[1];

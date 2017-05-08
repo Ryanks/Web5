@@ -25,7 +25,7 @@
         <%
             DBConnect ab2 = new DBConnect();
             
-            String abSql1 = "Select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "'";
+            String abSql1 = "Select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "' and red_card_initializer = 0";
             String lOCrn = ab2.queryDB(abSql1);
             String [] crns1 = lOCrn.split(",");
             String course_Details;
