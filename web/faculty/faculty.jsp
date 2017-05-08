@@ -36,6 +36,7 @@
             </div>
             <a href="#" id = rcuploadGrades>Upload Grades</a>
             <a href="#" id = rcviewRedCards>View Red Cards</a>
+            <a href="../Logout.jsp" id = logout>Logout</a>
         </nav>
 
 

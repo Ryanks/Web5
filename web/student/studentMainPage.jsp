@@ -50,7 +50,7 @@
             <a href="#" id = rcDS>Student Detail Schedule</a>
             <a href="#" id = rcRedCard>Red Card into class</a>
             <a href="#" id = rcGrade>Grades</a>
-            <a href="Web5\Logout.jsp" id = logout>Logout</a>
+            <a href="../Logout.jsp" id = logout>Logout</a>
         </nav>
 
 
