@@ -10,6 +10,7 @@
   <head>
     <%@page import="java.sql.*"%>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <%@include file="../sessionControl.jsp" %>
     <title>JSP Page</title>
   </head>
   <body>

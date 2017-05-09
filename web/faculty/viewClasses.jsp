@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%@include file="../sessionControl.jsp" %>
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
   </head>
@@ -23,22 +24,22 @@
       <a href="faculty.jsp">Return</a>
     </nav>
     <div style="margin-left:200px;">
-    <%
-      String term = request.getParameter("semester");
-      String teacher = session.getAttribute("name").toString();
-      String sql = "select name, time, CRN, term, coursenumber from courses where term = '" + term + "' and instructor = '" + teacher + "'";
+      <%
+        String term = request.getParameter("semester");
+        String teacher = session.getAttribute("name").toString();
+        String sql = "select name, time, CRN, term, coursenumber from courses where term = '" + term + "' and instructor = '" + teacher + "'";
    
-      Class.forName("com.mysql.jdbc.Driver");
-      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
-      PreparedStatement state = con.prepareStatement(sql);
-      ResultSet result = state.executeQuery();
-      if (result.next() == false) {
-    %>
-    <h1><div class="w3-center">Oops! no result set.</div></h1>
-    <%
-    } else {
-      result.beforeFirst();
-    %>
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
+        PreparedStatement state = con.prepareStatement(sql);
+        ResultSet result = state.executeQuery();
+        if (result.next() == false) {
+      %>
+      <h1><div class="w3-center">Oops! no result set.</div></h1>
+      <%
+      } else {
+        result.beforeFirst();
+      %>
       <table class="w3-table">
         <tr>
           <th>Course Number</th>
