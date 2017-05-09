@@ -26,7 +26,17 @@
       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
       PreparedStatement state = con.prepareStatement(sql);
       state.executeUpdate();
+      sql = "select Current_number_of_students from courses WHERE CRN = '" + CRN +"'";
+      state = con.prepareStatement(sql);
+      ResultSet result = state.executeQuery();
+      result.next();
+      int students = result.getInt(1);
+      students = students + 1;
+      sql = "UPDATE courses SET Current_number_of_students ='" + students + "' WHERE CRN = '" + CRN +"'";
+      state = con.prepareStatement(sql);
+      state.executeUpdate();
       response.sendRedirect("faculty.jsp");
+      
     %>
   </body>
 </html> 

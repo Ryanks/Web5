@@ -40,26 +40,31 @@
         session.setAttribute("status", status);
     %>
     <h1><div class="w3-center"><%=status%></div></h1>
-    <%
-        switch (status) {
-          case 2:
-            session.setAttribute("page", "admin");
-            response.sendRedirect("admin/admin.jsp");
-            break;
+      <%
+          switch (status) {
+            case 2:
+              session.setAttribute("page", "admin");
+              response.sendRedirect("admin/admin.jsp");
+              break;
 
-          case 1:
-            session.setAttribute("page", "staff");
-            response.sendRedirect("faculty/faculty.jsp");
-            break;
+            case 1:
+              session.setAttribute("page", "staff");
+              response.sendRedirect("faculty/faculty.jsp");
+              break;
 
-          case 0:
-            session.setAttribute("page", "student");
-            response.sendRedirect("student/studentMainPage.jsp");
-            break;
-          default:
+            case 0:
+              session.setAttribute("page", "student");
+              response.sendRedirect("student/studentMainPage.jsp");
+              break;
+            default:
               response.sendRedirect("index.jsp");
+          }
+        } else {
+
+          response.sendRedirect("index.jsp");
+          return;
         }
-      }
-    %>
+
+      %>
   </body>
 </html>
