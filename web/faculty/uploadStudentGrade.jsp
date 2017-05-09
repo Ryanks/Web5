@@ -13,6 +13,7 @@
     <title>JSP Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <%@include file="../sessionControl.jsp" %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel ="stylesheet" href ="styleSheets\hPStyle.css">
@@ -22,7 +23,7 @@
       float grade = Float.parseFloat(request.getParameter("grade"));
       int CRN = Integer.parseInt(request.getParameter("CRN"));
       int id = Integer.parseInt(request.getParameter("student_id"));
-      String sql = "UPDATE course_account SET grade='" + grade + "' WHERE CRN = '" + CRN + "' AND SchoolID = '"+id+"'";
+      String sql = "UPDATE course_account SET grade='" + grade + "' WHERE CRN = '" + CRN + "' AND SchoolID = '" + id + "'";
       Class.forName("com.mysql.jdbc.Driver");
       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
       PreparedStatement state = con.prepareStatement(sql);

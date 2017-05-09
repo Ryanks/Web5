@@ -9,6 +9,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <%@include file="../sessionControl.jsp" %>
     <title>JSP Page</title>
   </head>
   <body>
@@ -27,49 +28,49 @@
     } else {
       result.beforeFirst();
     %>
-      <table class="w3-table">
-        <tr>
-          <th>Course Number</th>
-          <th>Class</th>
-          <th>Time</th>
-          <th>Term</th>
-          <th>Room</th>
-          <th>CRN</th>
-          <th>View</th>
-        </tr>
-        <%
-          int id;
-          String name;
-          String time;
-          String terms;
-          String room;
-          String courseNumber;
-          int CRN;
-          while (result.next()) {
-            name = result.getString(1);
-            time = result.getString(2);
-            CRN = result.getInt(3);
-            room = result.getString(4);
-            terms = result.getString(5);
-            courseNumber = result.getString(6);
-            //set each term = result part
-        %>
-        <tr>
-          <td><%=courseNumber%></td>
-          <td><%=name%></td>
-          <td><%=time%></td>
-          <td><%=terms%></td>
-          <td><%=room%></td>
-          <td><%=CRN%></td>
-          <td><form name="classview" action="classGradeUpload.jsp" method="post">
-              <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
-            </form></td>
-        </tr>
-        <%        }
-          }
-        %>
+    <table class="w3-table">
+      <tr>
+        <th>Course Number</th>
+        <th>Class</th>
+        <th>Time</th>
+        <th>Term</th>
+        <th>Room</th>
+        <th>CRN</th>
+        <th>View</th>
+      </tr>
+      <%
+        int id;
+        String name;
+        String time;
+        String terms;
+        String room;
+        String courseNumber;
+        int CRN;
+        while (result.next()) {
+          name = result.getString(1);
+          time = result.getString(2);
+          CRN = result.getInt(3);
+          room = result.getString(4);
+          terms = result.getString(5);
+          courseNumber = result.getString(6);
+          //set each term = result part
+%>
+      <tr>
+        <td><%=courseNumber%></td>
+        <td><%=name%></td>
+        <td><%=time%></td>
+        <td><%=terms%></td>
+        <td><%=room%></td>
+        <td><%=CRN%></td>
+        <td><form name="classview" action="classGradeUpload.jsp" method="post">
+            <button class="w3-button" type="submit" name="CRN" value="<%=CRN%>">View Class</button>
+          </form></td>
+      </tr>
+      <%        }
+        }
+      %>
 
-      </table>
+    </table>
 
   </body>
 </html>

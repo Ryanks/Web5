@@ -10,18 +10,19 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
+    <%@include file="../sessionControl.jsp" %>
   </head>
   <body>
     <div class="w3-center">
       <div class="w3-container w3-blue">
         <h1>Class list: </h1>
         <%
-          for(int i=10;i>0;i--){ //This will be result set of students take from DB
-          %>
+          for (int i = 10; i > 0; i--) { //This will be result set of students take from DB
+%>
         <p>Student <%=i%> </p>
         <%
           }
-          %>
+        %>
       </div>
     </div>
   </body>
