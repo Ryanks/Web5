@@ -30,6 +30,7 @@
             <a href="#" id = rcRemoveFaculty>Remove Faculty</a>
             <a href="#" id = rcAddStudent>Add Student</a>
             <a href="#" id = rcRemoveStudent>Remove Student</a>
+            <a href="../Logout.jsp" id = logout>Logout</a>
         </nav>
 
 
@@ -51,6 +52,7 @@
                 <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
                 <%@include file ="addfaculty.jsp" %>
             </header>
+        </div>
         <div class="w3-main" style="margin-left:200px" id ="RemoveFaculty">
             <header class="w3-container">
                 <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
