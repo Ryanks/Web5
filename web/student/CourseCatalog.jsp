@@ -17,39 +17,23 @@
 
         <table class="w3-table w3-striped">
             <tr>
-                <td>Course Number</td>
-                <td>CRN</td>
-                <td>LAS</td>
-                <td>Lab</td>
-                <td>Section</td>
-                <td>Prereqs</td>
-                <td>Actual</td>
-                <td>Max</td>
-                <td>Available</td>
-                <td>Faculty</td>
-                <td>Room Location</td>
-                <td>Days</td>
+                <td>ID</td>
+                <td>Name</td>
                 <td>Time</td>
+                <td>Instructor</td>
+                <td>CRN</td>
+                <td>Room Location</td>
+                <td>Prerequisites</td>
+                <td>Max number of students</td>
+                <td>Current Number of students</td>
+                <td>LAB</td>
+                <td>LAS</td>
+                <td>Term</td>
+                <td>Course Number</td>
 
 
             </tr>
-            <tr>
-                <td>CSC 4400</td>
-                <td>30243</td>
-                <td></td>
-                <td>No</td>
-                <td>01</td>
-                <td>Y</td>
-                <td>11</td>
-                <td>20</td>
-                <td>9</td>
-                <td>Mahadev,Nadimpali</td>
-                <td>EDG 201</td>
-                <td>T R</td>
-                <td>9:30AM-10:45AM</td>
-
-
-            </tr>
+            
 
             
                 <%
@@ -81,7 +65,7 @@
                         
                     
                     
-                %>
+                
                             
                             
            
