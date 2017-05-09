@@ -43,7 +43,7 @@
           String time;
           String terms;
           String room;
-          int courseNumber;
+          String courseNumber;
           int CRN;
           while (result.next()) {
             name = result.getString(1);
@@ -51,7 +51,7 @@
             CRN = result.getInt(3);
             room = result.getString(4);
             terms = result.getString(5);
-            courseNumber = result.getInt(6);
+            courseNumber = result.getString(6);
             //set each term = result part
         %>
         <tr>

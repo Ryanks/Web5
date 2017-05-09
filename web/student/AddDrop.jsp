@@ -20,6 +20,9 @@
             String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"' and red_card_initializer = 0";
             String crns = db4.queryDB(crnSql);
             String values[] = crns.split(", ");
+            if(crns!=""){
+              
+            
         %>
         <form action = "DropClass.jsp">
             <table class="w3-table w3-striped">
@@ -47,7 +50,7 @@
                     
 
                 </tr>
-                <%}%>
+                <%}}%>
                 
             </table>
             <br>

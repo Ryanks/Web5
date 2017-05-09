@@ -16,7 +16,7 @@
         DBConnect db1 = new DBConnect();
         String rc =request.getParameter("RedCard");
         //String setRC = "UPDATE course_account SET red_card_initializer = 1 where CRN = " + rc;
-        String setRC = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + rc + "','" + 1 + "','" +0 + "')";
+        String setRC = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + rc + "','" + 0 + "','" +1 + "')";
         db1.updateDB(setRC);
         response.sendRedirect("studentMainPage.jsp");
         %>
