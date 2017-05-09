@@ -33,6 +33,7 @@
                     String[] splitRC = getRC.split(",");
                     
                     for (int z = 0; z < splitRC.length-1; z++) {
+                        out.println("<tr>");
                         splitRC[z] = splitRC[z].replace(","," ");
                         
                         if (((splitRC[z].equals(" 1")) || (splitRC[z].equals(" 2")))) {

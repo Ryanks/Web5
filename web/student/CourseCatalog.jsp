@@ -54,25 +54,31 @@
             
                 <%
                     DBConnect ab1 = new DBConnect();
-                    String abSql = "Select * from courses where 1";
+                    String abSql = "Select COUNT(*) from courses";
+                  
                     String asql = ab1.queryDB(abSql);
-                    String[] bsql = asql.split(",");
+                    asql = asql.replace(", ", "");
+                    int bsql = Integer.parseInt(asql);
                     int counter = 1;
-                    for (int q = 0; q < bsql.length; q++) {
-                        if(counter==1){
+                    for (int q = 0; q < bsql; q++) {
+                        String tempz = "select * from courses limit " + q +",1";
+                        String splitz = ab1.queryDB(tempz);
+                        String[] splitx = splitz.split(",");
+                        out.println("<tr>");
+                        for(int y = 0; y<splitx.length;y++){
+                            out.println("<td>");
+                            out.println(splitx[y]);
+                            out.println("</td>");
+                        
+                        }
+                        out.println("</tr>");
+                    }
                     %>
                     
-                        <tr>
-                        <%}%>
-                        <td><%out.print(bsql[q]);%></td>
-                        <%
-                        counter++;
-                        if (counter == 10) {
-                            counter = 1;
-                        %>
-                            </tr>
+                       
                             
-                        <%}}%>
+                            
+                        
                     
                     
                 %>

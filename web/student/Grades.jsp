@@ -19,17 +19,19 @@
                 <td>Course</td>
                 <td>Grade</td>                
             </tr>
-            <tr>
+            
                 <%
                     DBConnect db = new DBConnect();
-                    String gradeSql = "select CRN, Grade from course_account where SchoolID = '" + session.getAttribute("id") + "'";
+                    String gradeSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "' and red_card_initializer = 0";
                     String grades = db.queryDB(gradeSql);
                     String[] grade = grades.split(" ");
 
                 %>
 
                 <%                    for (int a = 0; a < grade.length; a++) {
+                    
                 %>
+                <tr>
                 <th>
 
                     <%String sqlClass = "select Name from courses where CRN = '" + grade[a] + "'";
@@ -45,13 +47,13 @@
                         String cGrade = db.queryDB(sqlGrade);
                         cGrade = cGrade.replace(","," ");
                         
-                        a++;
+                        
                     %>
                     <%= cGrade%>
 
                 </th>
             
-                <%  out.println();}%>
+                <%  out.println("");}%>
             </tr>
         </table>
     </body>
