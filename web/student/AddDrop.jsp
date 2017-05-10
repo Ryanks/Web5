@@ -17,7 +17,7 @@
         <%
             DBConnect db4 = new DBConnect();
             
-            String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"' and red_card_initializer = 0";
+            String crnSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id")+"' and red_card_initializer = 0 and semester = \"" + session.getAttribute("theSemester") + "\"";
             String crns = db4.queryDB(crnSql);
             String values[] = crns.split(", ");
             if(crns!=""){

@@ -51,9 +51,12 @@
         }
         cxS = temp1;
         int curs = Integer.parseInt(cxS);
-        
+        String getSem = "select Term from courses where CRN = '" + crn + "'";
+        String setSem = db3.queryDB(getSem);
+        int semlen = setSem.length();
+        setSem = setSem.substring(0,semlen-2);
         if(curs<maxs){
-        String sql = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + crn + "','" + 0 + "','" +0 + "')";
+        String sql = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + crn + "','" + 0 + "','" +0 + "','" + setSem + "')";
         db3.updateDB(sql);
         curs++;
         String updateSched = "update courses set Current_number_of_students = '"+ curs +"' where CRN = '" + crn+"'" ;

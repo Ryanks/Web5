@@ -16,6 +16,9 @@
     </head>
     <body>
         <%
+           
+            //session.setAttribute("theSemester", "Spring2017");
+            
             DBConnect ab = new DBConnect();
             if(session.getAttribute("user")=="")
                 response.sendRedirect("index.jsp");
@@ -35,15 +38,22 @@
 
             <div class="w3-dropdown-hover">
                 <a href="#" id = rcTerm>Select Term</a>
-                <form action = "selectTerm.jsp">
-                    <div class="w3-dropdown-content w3-white w3-card-4" >
-                        <ul>
-                            <a><button type ="submit" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Fall 2017</button></a>
-                            <a><button type ="submit" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Spring 2018</button></a>
-                            <a><button type ="submit" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Fall 2018</button></a>
-                        </ul>
+                
+                    
+                        <form action = "Semester.jsp">
+                            <select name = semester  class="selectpicker" onchange="this.form.submit()">
+                                <optgroup label ="Semester">
+                                <option value ="Fall2016" type = "submit">Fall2016</option>
+                                <option value ="Spring2017" type = "submit">Spring2017</option>
+                                <option value ="Fall2017" type = "submit"> Fall2017</option>
+                                </optgroup>
+                            </select>
+                            
+                        </form>
+                        
+                            
                     </div>
-                </form>
+                
             </div>
             <a href="#" id = rcCatalog>Course Catalog</a>
             <a href="#" id = rcADC>Add/drop Classes</a>

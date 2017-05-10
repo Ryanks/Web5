@@ -22,7 +22,7 @@
             
                 <%
                     DBConnect db = new DBConnect();
-                    String gradeSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "' and red_card_initializer = 0";
+                    String gradeSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "' and red_card_initializer = 0 and semester = \"" + session.getAttribute("theSemester") +"\"";
                     String grades = db.queryDB(gradeSql);
                     String[] grade = grades.split(" ");
 
