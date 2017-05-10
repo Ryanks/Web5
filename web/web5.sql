@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2017 at 03:22 PM
+-- Generation Time: May 11, 2017 at 01:38 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `Password` varchar(60) NOT NULL,
   `Status` int(60) NOT NULL,
   `Username` varchar(60) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=667 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
@@ -42,7 +42,10 @@ CREATE TABLE IF NOT EXISTS `account` (
 INSERT INTO `account` (`ID`, `Name`, `Email`, `Password`, `Status`, `Username`) VALUES
 (1, 'Faculty', 'Faculty', 'Faculty', 1, 'Faculty'),
 (2, 'Student', 'Student', 'Student', 0, 'Student'),
-(3, 'Admin', 'Admin', 'Admin', 2, 'Admin');
+(3, 'Admin', 'Admin', 'Admin', 2, 'Admin'),
+(13, 'johnny', 'john@yahoo.com', 'a', 0, 'john45'),
+(34, 'Chris', 'chris@gmail.com', 'a', 1, 'a'),
+(666, 'Satan', 'murder@fitchburgstate.edu', 'hail', 1, 'satan');
 
 -- --------------------------------------------------------
 
@@ -64,14 +67,16 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `LAS` varchar(11) NOT NULL,
   `Term` varchar(60) NOT NULL,
   `CourseNumber` varchar(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `courses`
 --
 
 INSERT INTO `courses` (`ID`, `Name`, `Time`, `Instructor`, `CRN`, `room_location`, `Prerequisites`, `Max_number_of_students`, `Current_number_of_students`, `LAB`, `LAS`, `Term`, `CourseNumber`) VALUES
-(2, 'Test Course', '8:00', 'Faculty', 12345, 'Edgerly 201', '', 22, 0, '', '', 'Spring2017', '1100');
+(2, 'Test Course', '8:00', 'Faculty', 12345, 'Edgerly 201', '', 22, 1, '', '', 'Spring', '1100'),
+(3, 'How to Survive Hell', '4:20-6:66', 'Satan', 420, 'HEll420', '', 5, 3, '', '', 'Summer', '420'),
+(4, 'Welcome', '9:30', 'Chris', 2468, '202', '', 25, 1, '', '', 'Spring', '2000');
 
 -- --------------------------------------------------------
 
@@ -83,16 +88,19 @@ CREATE TABLE IF NOT EXISTS `course_account` (
 `ID` int(60) NOT NULL,
   `SchoolID` int(60) NOT NULL,
   `CRN` int(60) NOT NULL,
-  `Grade` float NOT NULL,
-  `red_card_initializer` varchar(60) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `Grade` int(60) NOT NULL,
+  `red_card_initializer` varchar(60) NOT NULL,
+  `semester` varchar(60) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course_account`
 --
 
-INSERT INTO `course_account` (`ID`, `SchoolID`, `CRN`, `Grade`, `red_card_initializer`) VALUES
-(1, 2, 12345, 3.5, '1');
+INSERT INTO `course_account` (`ID`, `SchoolID`, `CRN`, `Grade`, `red_card_initializer`, `semester`) VALUES
+(11, 2, 12345, 0, '0', 'Spring'),
+(12, 2, 2468, 0, '0', 'Spring'),
+(17, 2, 420, 1, '0', 'Summer');
 
 --
 -- Indexes for dumped tables
@@ -124,17 +132,17 @@ ALTER TABLE `course_account`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=667;
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `course_account`
 --
 ALTER TABLE `course_account`
-MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID` int(60) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
