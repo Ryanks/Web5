@@ -32,11 +32,6 @@
                     <td>Password</td>
                     <td><input type="text" name="inputPassword"></td>
                 </tr>
-                <tr>
-                    <td>Status</td>
-                    <td><input type="text" name="inputStatus"></td>
-                </tr>
-                <tr>
                     <td>Username</td>
                     <td><input type="text" name="inputUsername"></td>
                 </tr>

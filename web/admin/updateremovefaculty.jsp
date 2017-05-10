@@ -16,12 +16,10 @@
         <script src ="showAdminOptions.js"></script>
     </head>
     <body>
+        <h1>Welcome, <%out.println(session.getAttribute("name"));%></h1>
         <nav class="w3-sidenav w3-collapse w3-teal w3-card-2 w3-animate-left" style="width:200px;" id="mySidenav">
             <a href="javascript:void(0)" onclick="w3_close()" 
                class="w3-closenav w3-large w3-hide-large">Close &times;</a>
-
-
-
             
             <a href="#" id = rcAddClass>Add Class</a>
             <a href="#" id = rcRemoveClass>Remove Class</a>
@@ -29,47 +27,11 @@
             <a href="#" id = rcRemoveFaculty>Remove Faculty</a>
             <a href="#" id = rcAddStudent>Add Student</a>
             <a href="#" id = rcRemoveStudent>Remove Student</a>
+            <a href="../Logout.jsp" id = logout>Logout</a>
         </nav>
 
 
-        <div class="w3-main" style="margin-left:200px" id ="AddClass">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%@include file ="addclass.jsp" %>
-            </header>
-        </div>
-        <div class="w3-main" style="margin-left:200px" id ="RemoveClass">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%@include file ="removeclass.jsp" %>
-            </header>
-        </div>    
-            
-        <div class="w3-main" style="margin-left:200px" id ="AddFaculty">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%@include file ="addfaculty.jsp" %>
-            </header>
-        <div class="w3-main" style="margin-left:200px" id ="RemoveFaculty">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%@include file ="removefaculty.jsp" %>
-            </header>
-        </div>  
-            
-        </div>
-            <div class="w3-main" style="margin-left:200px" id ="AddStudent">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%@include file ="addstudent.jsp" %>
-            </header>
-        </div>
-            <div class="w3-main" style="margin-left:200px" id ="RemoveStudent">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-                <%@include file ="removestudent.jsp" %>
-            </header>
-        </div>
+  
         <%
        
         String username = request.getParameter("inputUsername");
@@ -82,14 +44,9 @@
      String sql = "delete from account where username ='"+username+"'";
     st = conn.createStatement();
     st.executeUpdate(sql);
+    response.sendRedirect("admin.jsp");
         %>
         
-        <div align="center">
-            <font size ="6" id="updateText">
-            Faculty Removed!
-            <br><br><br>
-        </font>
-        </div>
     </body>
 </html>
 

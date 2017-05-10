@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,23 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%
+        Connection conn=null;
+        Statement st=null;
+        Class.forName("com.mysql.jdbc.Driver");
+        conn=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/web5", "root", "");
+        ResultSet choiceSet = null;
+        st = conn.createStatement();
+        choiceSet = st.executeQuery("SELECT * FROM `account`WHERE `Status` = 1 AND NOT name = 'Faculty'");
+
+
+
+
+
+        %>
+        
+        
+        
     <center>
         <table border="1" cellpadding="30">
             <form name="getForm" action="updateaddclass.jsp" method="get">
@@ -30,11 +48,22 @@
                 <tr>
                     <tr>
                     <td>Instructor</td>
-                    <td><input type="text" name="inputInstructor"></td>
+                    <td><select name="inputInstructor">
+  <option>Select...</option>
+  <%  while(choiceSet.next()){ %>
+            <option><%= choiceSet.getString(2)%></option>
+        <% } %>
+                        </select></td>
                 </tr>
                 <tr>
                     <td>Semester</td>
-                    <td><input type="text" name="inputSemester"></td>
+                            <td><select name="inputSemester">
+                                    <option>Select..</option>
+                                    <option>Spring</option>
+                                    <option>Summer</option> 
+                                    <option>Fall</option> 
+                                    <option>Winter</option> 
+                        </select></td>
                 </tr>
                 <tr>
                     <td>Room</td>
