@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     </head>
     <body>
+        
         <h1>Here are the courses for the semester</h1>
 
         <table class="w3-table w3-striped">

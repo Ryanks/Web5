@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <h1>Here are your current classes this semester</h1>
         <table class="w3-table w3-striped">
             <tr>

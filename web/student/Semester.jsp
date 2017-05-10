@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <%
         String semester = request.getParameter("semester");
         session.setAttribute("theSemester",semester);

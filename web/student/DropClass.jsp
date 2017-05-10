@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <%
          String crn =request.getParameter("crn1");
         DBConnect db3 = new DBConnect();

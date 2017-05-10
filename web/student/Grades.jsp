@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <h1>Here are the final grades of the semester</h1>
 
         <table class="w3-table w3-striped">
@@ -21,6 +22,7 @@
             </tr>
             
                 <%
+                    
                     DBConnect db = new DBConnect();
                     String gradeSql = "select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "' and red_card_initializer = 0 and semester = \"" + session.getAttribute("theSemester") +"\"";
                     String grades = db.queryDB(gradeSql);

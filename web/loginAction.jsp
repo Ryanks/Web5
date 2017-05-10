@@ -54,7 +54,7 @@
 
             case 0:
               session.setAttribute("page", "student");
-              session.setAttribute("theSemester", "Spring2017");
+              session.setAttribute("theSemester", "Spring");              
               response.sendRedirect("student/studentMainPage.jsp");
               break;
             default:

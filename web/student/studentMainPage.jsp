@@ -15,13 +15,15 @@
         <script src ="showStudentOptions.js"></script>
     </head>
     <body>
+        
         <%
            
             //session.setAttribute("theSemester", "Spring2017");
             
             DBConnect ab = new DBConnect();
-            if(session.getAttribute("user")=="")
-                response.sendRedirect("index.jsp");
+           if(session.getAttribute("user")=="") 
+                 response.sendRedirect("index.jsp"); 
+
             
             String IDsql = "select ID from account where Username = '" + session.getAttribute("user")+"'";
             String theid = ab.queryDB(IDsql);
@@ -43,9 +45,11 @@
                         <form action = "Semester.jsp">
                             <select name = semester  class="selectpicker" onchange="this.form.submit()">
                                 <optgroup label ="Semester">
-                                <option value ="Fall2016" type = "submit">Fall2016</option>
-                                <option value ="Spring2017" type = "submit">Spring2017</option>
-                                <option value ="Fall2017" type = "submit"> Fall2017</option>
+                                <option value ="" type = "submit">---</option>
+                                <option value ="Fall" type = "submit">Fall</option>
+                                <option value ="Spring" type = "submit">Spring</option>
+                                <option value ="Summer" type = "submit"> Summer</option>
+                                <option value ="Winter" type = "submit"> Winter</option>
                                 </optgroup>
                             </select>
                             
@@ -95,12 +99,7 @@
                 <%@include file ="StudentSchedule.jsp" %>
             </header>
         </div>
-            <div class="w3-main" style="margin-left:200px" id ="courseschedule">
-            <header class="w3-container">
-                <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</span>
-               
-            </header>
-        </div>
+            
 
 
     </body>
