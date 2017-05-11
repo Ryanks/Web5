@@ -13,6 +13,8 @@
     </head>
     <body>
         <%session.setAttribute("user","");
+        session.setAttribute("id","");
+        session.setAttribute("name","");
         response.sendRedirect("index.jsp");
         %>
     </body>

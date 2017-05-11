@@ -28,9 +28,10 @@
         <form action = "viewClasses.jsp">
           <div class="w3-dropdown-content w3-white w3-card-4" >
             <ul>
-              <a><button type ="submit" value="Spring2017" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Spring 2017</button></a>
-              <a><button type ="submit" value="Fall2016" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Fall 2016</button></a>
-              <a><button type ="submit" value="Winter2016" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Winter 2016</button></a>
+              <a><button type ="submit" value="Spring" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Spring</button></a>
+              <a><button type ="submit" value="Summer" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Summer</button></a>
+              <a><button type ="submit" value="Fall" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Fall</button></a>
+              <a><button type ="submit" value="Winter" name="semester" style = "padding: 0;border: none;background: none;visited,link{text-decoration: none}">Winter</button></a>
             </ul>
           </div>
         </form>
