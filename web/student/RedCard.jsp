@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file ="../sessionControl.jsp" %>
+        
         <h3>Please type in the CRN number you need to be sent and approved by the teacher</h3>
         <form action ="SubmitRedCard.jsp">
             <input name = "RedCard" type="text">
@@ -28,6 +28,7 @@
             </tr>
             <tr>
                 <%
+                    if(session.getAttribute("user")!=null){
                     DBConnect db68 = new DBConnect();
                     String getRCSql = "select CRN, red_card_initializer from course_account where SchoolID = " + session.getAttribute("id") + "and semester = '" + session.getAttribute("theSemester")+"'";
                     String getRC = db68.queryDB(getRCSql);
@@ -61,7 +62,7 @@
                             
                          else {
                             continue;
-                            }}%>
+                            }}}%>
             <br>
 
 

@@ -14,7 +14,8 @@
   <body>
     <%
       if(session.getAttribute("user")==null ||session.getAttribute("name")==null||session.getAttribute("status")==null ||session.getAttribute("user")==""){
-        response.sendRedirect("../index.jsp");
+          Thread.sleep(5000);
+          response.sendRedirect("../index.jsp");
       }
       %>
   </body>

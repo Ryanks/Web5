@@ -15,13 +15,13 @@
         <script src ="showStudentOptions.js"></script>
     </head>
     <body>
-        <%@include file ="../sessionControl.jsp" %>
+        <%@include file = "../sessionControl.jsp" %>
         <%
            
             //session.setAttribute("theSemester", "Spring2017");
             
             DBConnect ab = new DBConnect();
-           
+            
 
             
             String IDsql = "select ID from account where Username = '" + session.getAttribute("user")+"'";

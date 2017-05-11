@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file ="../sessionControl.jsp" %>
+        
         <h1>Here are your current classes this semester</h1>
         <table class="w3-table w3-striped">
             <tr>
@@ -24,6 +24,7 @@
             
         
         <%
+            if(session.getAttribute("user")!=null){
             DBConnect ab2 = new DBConnect();
             
             String abSql1 = "Select CRN from course_account where SchoolID = '" + session.getAttribute("id") + "' and red_card_initializer = 0 and semester = \"" + session.getAttribute("theSemester") + "\"";
@@ -48,7 +49,7 @@
              }
              out.println("</tr>");
             count++;
-            }
+            }}
         %>
         
         

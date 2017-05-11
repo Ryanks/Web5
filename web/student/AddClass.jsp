@@ -12,13 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <%@include file ="../sessionControl.jsp" %>
+       
         <%
             
             //boopdaboopda4jjjj4
             
             
-            
+            if(session.getAttribute("user")!=null){
             
         String crn =request.getParameter("crn");
         DBConnect db3 = new DBConnect();
@@ -66,7 +66,7 @@
         }
         else{
         response.sendRedirect("studentMainPage.jsp");
-        }
+        }}
         %>
     </body>
 </html>
