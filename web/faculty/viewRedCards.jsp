@@ -13,16 +13,17 @@
     <title>JSP Page</title>
   </head>
   <body>
-    <%
 
-      boolean flag = false;
-      String teachers = session.getAttribute("name").toString();
-      String sqls = "select name, time, CRN, term, coursenumber from courses where instructor = '" + teachers + "'";
-      Class.forName("com.mysql.jdbc.Driver");
-      Connection con_red = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
-      PreparedStatement states = con_red.prepareStatement(sqls);
-      ResultSet results = states.executeQuery();
-      if (results.next() == false) {
+    <%
+      if (session.getAttribute("name") != null) {
+        boolean flag = false;
+        String teachers = session.getAttribute("name").toString();
+        String sqls = "select name, time, CRN, term, coursenumber from courses where instructor = '" + teachers + "'";
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con_red = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
+        PreparedStatement states = con_red.prepareStatement(sqls);
+        ResultSet results = states.executeQuery();
+        if (results.next() == false) {
     %>
     <h1><div class="w3-center">You have no classes</div></h1>
     <%
@@ -94,8 +95,8 @@
         %>
         <h1><div class="w3-center">You have no red card requests</div></h1>
         <%
+            }
           }
-
         %>
         </body>
         </html>

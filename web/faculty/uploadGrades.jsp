@@ -14,13 +14,14 @@
   <body>
 
     <%
-      String teacher = session.getAttribute("name").toString();
-      String sql = "select name, time, CRN, room_location, term, coursenumber from courses where instructor = '" + teacher + "'";
-      Class.forName("com.mysql.jdbc.Driver");
-      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
-      PreparedStatement state = con.prepareStatement(sql);
-      ResultSet result = state.executeQuery();
-      if (result.next() == false) {
+      if (session.getAttribute("name") != null) {
+        String teacher = session.getAttribute("name").toString();
+        String sql = "select name, time, CRN, room_location, term, coursenumber from courses where instructor = '" + teacher + "'";
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Web5", "root", "");
+        PreparedStatement state = con.prepareStatement(sql);
+        ResultSet result = state.executeQuery();
+        if (result.next() == false) {
     %>
     <h1><div class="w3-center">Oops! no result set.</div></h1>
     <%
@@ -53,7 +54,7 @@
           terms = result.getString(5);
           courseNumber = result.getString(6);
           //set each term = result part
-%>
+      %>
       <tr>
         <td><%=courseNumber%></td>
         <td><%=name%></td>
@@ -66,6 +67,7 @@
           </form></td>
       </tr>
       <%        }
+          }
         }
       %>
 
