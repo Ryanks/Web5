@@ -11,10 +11,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <%@include file="../sessionControl.jsp" %>
+    <%@include file="../sessionControl.jsp"%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src ="showFacultyOptions.js"></script>
-  </head>s
+  </head>
   <body>
     <h1>Welcome Faculty!</h1>
     <nav class="w3-sidenav w3-collapse w3-teal w3-card-2 w3-animate-left" style="width:200px;" id="mySidenav">
