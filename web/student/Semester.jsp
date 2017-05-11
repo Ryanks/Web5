@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <%@include file ="../sessionControl.jsp" %>
         <%
         String semester = request.getParameter("semester");
         session.setAttribute("theSemester",semester);

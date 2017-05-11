@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <%@include file ="../sessionControl.jsp" %>
         <h1>Here are your current classes this semester</h1>
 
         <%

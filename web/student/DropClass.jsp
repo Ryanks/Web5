@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <%@include file ="../sessionControl.jsp" %>
         <%
          String crn =request.getParameter("crn1");
         DBConnect db3 = new DBConnect();

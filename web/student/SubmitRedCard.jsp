@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <%@include file ="../sessionControl.jsp" %>
         <%
         DBConnect db1 = new DBConnect();
         String rc =request.getParameter("RedCard");

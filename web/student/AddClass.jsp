@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-       
+       <%@include file ="../sessionControl.jsp" %>
         <%
             
             //boopdaboopda4jjjj4
@@ -55,9 +55,7 @@
         String setSem = db3.queryDB(getSem);
         int semlen = setSem.length();
         setSem = setSem.substring(0,semlen-2);
-//        if(setSem != session.getAttribute("theSemester")){
-//            response.sendRedirect("studentMainPage.jsp");
-//        }
+        
         if(curs<maxs){
         String sql = "insert into course_account values (0,'" + session.getAttribute("id") + "','" + crn + "','" + 0 + "','" +0 + "','" + setSem + "')";
         db3.updateDB(sql);

@@ -13,7 +13,7 @@
   </head>
   <body>
     <%
-      if(session.getAttribute("user")==null ||session.getAttribute("name")==null||session.getAttribute("status")==null){
+      if(session.getAttribute("user")==null ||session.getAttribute("name")==null||session.getAttribute("status")==null ||session.getAttribute("user")==""){
         response.sendRedirect("../index.jsp");
       }
       %>

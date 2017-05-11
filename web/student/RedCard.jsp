@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <%@include file ="../sessionControl.jsp" %>
         <h3>Please type in the CRN number you need to be sent and approved by the teacher</h3>
         <form action ="SubmitRedCard.jsp">
             <input name = "RedCard" type="text">
