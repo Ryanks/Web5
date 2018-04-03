@@ -1,1 +1,1 @@
-This is a college registration website
+Hello and welcome to Web5. This is a group project for our Software engineering class at Fitchburg State. This project was to make a dummy college registration website. In it we used Java Server pages as our Database connector. Not only did we learn about implementing server side Technology, but also bettered our understanding in HTML, CSS, and JavaScript
